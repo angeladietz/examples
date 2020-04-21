@@ -245,6 +245,7 @@ class ModelDataHandler {
       return (y: yCoord, x: xCoord)
     }
 
+//    print(coords)
     // MARK: Transform key point position and make lines
     // Make `Result` from `keypointPosition'. Each point is adjusted to `ViewSize` to be drawn.
     var result = Result(dots: [], lines: [], score: totalScore)
