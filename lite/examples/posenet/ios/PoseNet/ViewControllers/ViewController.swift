@@ -32,9 +32,12 @@ class ViewController: UIViewController {
 
   @IBOutlet weak var delegatesControl: UISegmentedControl!
 
+  @IBOutlet weak var positionNameLabel: UILabel!
+
   // MARK: ModelDataHandler traits
   var threadCount: Int = Constants.defaultThreadCount
   var delegate: Delegates = Constants.defaultDelegate
+  var position: String = Constants.defaultPositionName
 
   // MARK: Result Variables
   // Inferenced data to render.
@@ -96,6 +99,9 @@ class ViewController: UIViewController {
         animated: false)
     }
     delegatesControl.selectedSegmentIndex = 0
+    
+    //Setup position name label
+    positionNameLabel.text = Constants.defaultPositionName.description
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -263,6 +269,8 @@ extension ViewController: CameraFeedManagerDelegate {
       }
       self.drawResult(of: result)
     }
+    
+    //TODO: set the position label here
   }
 
   func drawResult(of result: Result) {
