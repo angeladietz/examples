@@ -58,6 +58,8 @@ class ViewController: UIViewController {
   // Handles all data preprocessing and makes calls to run inference.
   private var modelDataHandler: ModelDataHandler?
 
+    private var danceAnalyzer: DanceAnalyzer? = DanceAnalyzer()
+
   // MARK: View Handling Methods
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -267,6 +269,8 @@ extension ViewController: CameraFeedManagerDelegate {
         self.clearResult()
         return
       }
+        var pose = self.danceAnalyzer?.identifyPose(result: result)
+        print(pose)
       self.drawResult(of: result)
     }
     
