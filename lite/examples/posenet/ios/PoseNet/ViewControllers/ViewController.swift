@@ -269,8 +269,9 @@ extension ViewController: CameraFeedManagerDelegate {
         self.clearResult()
         return
       }
-        var pose = self.danceAnalyzer?.identifyPose(result: result)
-        print(pose)
+        let pose = self.danceAnalyzer?.identifyPose(result: result)
+//        print(pose)
+        self.positionNameLabel.text = pose
       self.drawResult(of: result)
     }
     
