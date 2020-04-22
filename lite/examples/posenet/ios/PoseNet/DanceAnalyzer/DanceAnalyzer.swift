@@ -24,6 +24,12 @@ class DanceAnalyzer: NSObject {
             }
         }
         
+        if person[BodyPart.LEFT_WRIST]!.y < person[BodyPart.LEFT_ELBOW]!.y && person[BodyPart.LEFT_ELBOW]!.y < person[BodyPart.LEFT_SHOULDER]!.y {
+                if person[BodyPart.RIGHT_WRIST]!.y < person[BodyPart.RIGHT_ELBOW]!.y && person[BodyPart.RIGHT_ELBOW]!.y < person[BodyPart.RIGHT_SHOULDER]!.y {
+                    return "fifth position"
+            }
+        }
+
         
         return "NOT first position"
     }
